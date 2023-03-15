@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import {Box} from '@chakra-ui/react'
+import {Box, Flex, Grid} from '@chakra-ui/react'
 import { useSelector } from 'react-redux';
 import { useState } from 'react'
+import CardBox from './CardBox';
 
 function ProductPageRightSide(props) {
 
@@ -17,16 +18,15 @@ function ProductPageRightSide(props) {
  
     
     return (
-            <Box>
+            <Grid templateColumns='repeat(3, 1fr)' gap={6}>
+
                 {
                     storedata?.map((ele,i)=>{
-                        return <div key={i+1}>
-                            <img src={ele.image} alt="alt"/>
-                        </div>
+                        return <CardBox key={i+1} ele ={ele} />
                     })
                 }
 
-            </Box>
+            </Grid>
     );
 }
 

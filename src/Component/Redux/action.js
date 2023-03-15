@@ -7,7 +7,7 @@ const appThunkActionCreator = () => {
             type:GET_RES_DATA_REQUEST,
             payload: true,
         });
-        axios.get(`https://wild-rose-cape-buffalo-kit.cyclic.app/Restaurant`)
+        axios.get(`https://wild-rose-cape-buffalo-kit.cyclic.app/restaurants`)
         .then((res)=>{
          //console.log("aaaa",res.data);   
          if (res.data) {  

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box} from '@chakra-ui/react'
+import {Box, Flex} from '@chakra-ui/react'
 import ProductLeftbar from './ProductLeftbar';
 import ProductPageRightSide from './ProductPageRightSide'
 import { useEffect } from 'react';
@@ -18,8 +18,10 @@ function ProductMainPage(props) {
     return (
 
             <Box>
+                <Flex width="80%" margin="auto">
                 <ProductLeftbar/>
                 <ProductPageRightSide/>
+                </Flex>
             </Box>
 
     );
