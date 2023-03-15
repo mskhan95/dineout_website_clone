@@ -1,13 +1,13 @@
 import axios from "axios"
 import {GET_RES_DATA_REQUEST,GET_RES_DATA_SUCCESS, GET_RES_DATA_FAILURE} from "./actiontype";
 
-const appThunkActionCreator = () => {
+const appThunkActionCreator = (page,sort,order) => {
     return (dispatch) => {
        dispatch({
             type:GET_RES_DATA_REQUEST,
             payload: true,
         });
-        axios.get(`https://wild-rose-cape-buffalo-kit.cyclic.app/restaurants`)
+        axios.get(`https://wild-rose-cape-buffalo-kit.cyclic.app/restaurants?_page=${page}&_limit=15_sort=${sort}&_order=${order}`)
         .then((res)=>{
          //console.log("aaaa",res.data);   
          if (res.data) {  
