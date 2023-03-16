@@ -1,0 +1,31 @@
+@media only screen and (max-width: 500px) {
+    #navRes {
+      display: none;
+    }
+    #itemNav {
+      display: none;
+    }
+  }
+ 
+  #navFix {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    width: 100%;
+  
+  }
+  @media(min-width:801px){
+    #hamburger{
+      display: none;
+    }
+  }
+  @media (max-width:800px) {
+    #resumeBtn{
+      display: none;
+    }
+  }
+
+  /* #FF645A  OR  rgb(255,100,90)
+  #FFFFFF
+   */
+  
