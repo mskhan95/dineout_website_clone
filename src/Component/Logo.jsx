@@ -1,12 +1,13 @@
 import { Image, Box, Flex, keyframes } from '@chakra-ui/react';
 
-export default function Photo() {
+export default function Logo() {
   const size = '100px';
 
   return (
     <Flex
       justifyContent="center"
       alignItems="center"
+      ml='100px'
       h="100px"
       w="100px"
       overflow="hidden">
@@ -18,12 +19,12 @@ export default function Photo() {
         h={size}
         _before={{
           // content: "''",
-          // position: 'relative',
+          position: 'relative',
           display: 'block',
           // width: '300%',
           // height: '300%',
           // boxSizing: 'border-box',
-          marginLeft: '20rem',
+          marginLeft: '-20rem',
           // marginTop: '-16rem',
           // borderRadius: '50%',
         }}>

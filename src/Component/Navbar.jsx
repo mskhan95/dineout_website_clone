@@ -2,56 +2,52 @@ import {
     Box,
     Flex,
     Button,
-    useColorModeValue,
     Stack,
-    useColorMode,
     Show,
     HStack,
     Text,
     useDisclosure,
     IconButton,
-    Hide,
   } from "@chakra-ui/react";
   import {
-    MoonIcon,
-    SunIcon,
     HamburgerIcon,
     CloseIcon,
     AddIcon,
   } from "@chakra-ui/icons";
-  import Photo from "./Photo";
+  import Logo from "./Logo";
   import "./Navbar.css";
-  import Success from "./Success";
   
   export default function Navbar() {
-    // const { colorMode, toggleColorMode } = useColorMode();
     const { isOpen, onOpen, onClose } = useDisclosure();
   
     return (
-      <div id="navFix">
+      <div id="navFix" style={{fontFamily: "arial, sans-serif"}}>
         <Box
         //** Navbar Background
-          bg='gray'
+          bg='#FFFFFFff'
           px={9}
           width={["100%"]}
         >
           <Flex h={20} alignItems={"center"} justifyContent={"space-between"} >
             <HStack w="42%">
-                <Photo/>
+                <Logo/>
               <Show breakpoint="(min-width: 1000px)">
                 {" "}
-                {/* <Photo /> */}
+                {/* <Logo /> */}
               </Show>
             </HStack>
-  
+
+            <div class="searchBar ">
+              <span class="Vuzv6" >
+                <svg class='locIcon' xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 10 13">
+                  <path fill="#666" fill-rule="nonzero" d="M5 0a5 5 0 0 1 5 5c0 1.826-.84 3.618-2.213 5.246C6.776 11.446 5.501 12.5 5 12.5c-.501 0-1.776-1.053-2.787-2.254C.84 8.618 0 6.826 0 5a5 5 0 0 1 5-5zm0 1.25A3.75 3.75 0 0 0 1.25 5c0 1.484.72 3.017 1.919 4.441.452.537.948 1.024 1.409 1.405.185.154.422.325.422.325s.263-.193.422-.325c.461-.38.957-.868 1.41-1.405C8.03 8.017 8.75 6.484 8.75 5A3.75 3.75 0 0 0 5 1.25zm0 1.875a1.875 1.875 0 1 1 0 3.75 1.875 1.875 0 0 1 0-3.75zm0 1.25a.625.625 0 1 0 0 1.25.625.625 0 0 0 0-1.25z">
+                  </path>
+                </svg>
+              </span>
+              <input class ="searchInp" placeholder="Search for restaurants" type='text' />
+            </div>
+
             <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-              {/* <IconButton
-                size={"md"}
-                icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-                aria-label={"Open Menu"}
-                display={{ md: "none" }}
-                onClick={isOpen ? onClose : onOpen}
-              /> */}
               <HStack spacing={8} alignItems={"center"}>
                 <HStack
                   as={"nav"}
@@ -59,35 +55,35 @@ import {
                   display={{ base: "none", md: "flex" }}
                   id="myDIV"
                 >
-                  <Button className="btnRes" bg='#FFFFFFff' _hover={{color: '#FF645A'}} >
+                  <Button fontSize='sm' className="btnRes" bg='#FFFFFFff' _hover={{color: '#FF645A'}} >
                     <a href="#Home">
                       {" "}
-                      <b>Home</b>
+                      <p>Home</p>
                     </a>
                   </Button>
   
-                  <Button className="btnRes" bg='#FFFFFFff' _hover={{color: '#FF645A'}}>
+                  <Button fontSize='sm' className="btnRes" bg='#FFFFFFff' _hover={{color: '#FF645A'}}>
                     <a href="#Book A Table">
-                      <b>Book A Table</b>
+                      <p>Book A Table</p>
                     </a>
                   </Button>
   
-                  <Button className="btnRes" bg='#FFFFFFff' _hover={{color: '#FF645A'}}>
+                  <Button fontSize='sm' className="btnRes" bg='#FFFFFFff' _hover={{color: '#FF645A'}}>
                     <a href="#Dineout Pay">
                       {" "}
-                      <b>Dineout Pay</b>
+                      <p>Dineout Pay</p>
                     </a>
                   </Button>
   
-                  <Button className="btnRes" bg='#FFFFFFff' _hover={{color: '#FF645A'}}>
+                  <Button fontSize='sm' className="btnRes" bg='#FFFFFFff' _hover={{color: '#FF645A'}}>
                     <a href="#Events">
-                      <b>Events</b>
+                      <p>Events</p>
                     </a>
                   </Button>
   
-                  <Button className="btnRes" bg='#FFFFFFff' _hover={{color: '#FF645A'}}>
+                  <Button fontSize='sm' className="btnRes" bg='#FFFFFFff' _hover={{color: '#FF645A'}}>
                     <a href="#Blog">
-                      <b>Blog</b>
+                      <p>Blog</p>
                     </a>
                   </Button>
                 </HStack>
@@ -98,17 +94,13 @@ import {
   
             <Flex alignItems={"center"}>
               <Stack direction={"row"} spacing={7}>
-                {/* <Button onClick={toggleColorMode}>
-                  {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-                </Button> */}
-  
                 <Button
                   backgroundColor="#FF645A"
                   _hover={{ bg: "#f30f00", color: "#FFFFFF" }}
                   color="white"
                   variant="solid"
                   size={["sm", "md"]}
-                  id="resumeBtn"
+                  id="loginBtn"
                 >
                   <a
                     href={""}
@@ -131,106 +123,70 @@ import {
             {isOpen ? (
               <Box pb={4} display={{ md: "none" }}>
                 <Stack as={"nav"} spacing={4}>
-                  <Button  onClick={isOpen ? onClose : onOpen}
-                    _hover={{
-                      textShadow: "#FC0 1px 0 10px",
-                      transform: "scale(1.2)",
-                    }}>
+                  <Button  onClick={isOpen ? onClose : onOpen}>
                     <a href="#Home">
                       {" "}
-                      <b>Home</b>
+                      <p>Home</p>
                     </a>
                   </Button>
-                  <Button  onClick={isOpen ? onClose : onOpen}
-                    _hover={{
-                      textShadow: "#FC0 1px 0 10px",
-                      transform: "scale(1.2)",
-                    }}>
+                  <Button  onClick={isOpen ? onClose : onOpen}>
                     <a href="#Home">
                       {" "}
-                      <b>Home</b>
+                      <p>Home</p>
                     </a>
                   </Button>
   
-                  <Button  onClick={isOpen ? onClose : onOpen}
-                    _hover={{
-                      textShadow: "#FC0 1px 0 10px",
-                      transform: "scale(1.2)",
-                    }}>
+                  <Button  onClick={isOpen ? onClose : onOpen}>
                     <a href="#Home">
                       {" "}
-                      <b>Home</b>
+                      <p>Home</p>
                     </a>
                   </Button>
-                  <Button  onClick={isOpen ? onClose : onOpen}
-                    _hover={{
-                      textShadow: "#FC0 1px 0 10px",
-                      transform: "scale(1.2)",
-                    }}>
+                  <Button  onClick={isOpen ? onClose : onOpen}>
                     <a href="#Home">
                       {" "}
-                      <b>Home</b>
+                      <p>Home</p>
                     </a>
                   </Button>
                   <Button
                     onClick={isOpen ? onClose : onOpen}
-                    _hover={{
-                      textShadow: "#FC0 1px 0 10px",
-                      transform: "scale(1.2)",
-                    }}
                   >
                     <a href="#Home">
                       {" "}
-                      <b>Home</b>
+                      <p>Home</p>
                     </a>
                   </Button>
   
                   <Button
                     onClick={isOpen ? onClose : onOpen}
-                    _hover={{
-                      textShadow: "#FC0 1px 0 10px",
-                      transform: "scale(1.2)",
-                    }}
                   >
                     <a href="#Book_A_Table">
-                      <b>Book A Table</b>
+                      <p>Book A Table</p>
                     </a>
                   </Button>
   
                   <Button
                     onClick={isOpen ? onClose : onOpen}
-                    _hover={{
-                      textShadow: "#FC0 1px 0 10px",
-                      transform: "scale(1.2)",
-                    }}
                   >
                     <a href="#Dineout_Pay">
                       {" "}
-                      <b>Dineout Pay</b>
+                      <p>Dineout Pay</p>
                     </a>
                   </Button>
   
                   <Button
                     onClick={isOpen ? onClose : onOpen}
-                    _hover={{
-                      textShadow: "#FC0 1px 0 10px",
-                      transform: "scale(1.2)",
-                    }}
                   >
                     <a href="#Events">
-                      <b>Events</b>
+                      <p>Events</p>
                     </a>
                   </Button>
   
                   <Button
                     onClick={isOpen ? onClose : onOpen}
-                    _hover={{
-                      textShadow: "#FC0 1px 0 10px",
-                      transform: "scale(1.2)",
-                    }}
                   >
                     <a href="#Blog">
-                      <b>Blog</b>
+                      <p>Blog</p>
                     </a>
                   </Button>
                 </Stack>

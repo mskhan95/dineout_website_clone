@@ -1,0 +1,134 @@
+.Footer_outer {
+    /* margin-top: 30px; */
+    width: 100%;
+    background-color: white;
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1px;
+  }
+  .Footer_inner {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    margin-bottom: 30px;
+    background-color: white;
+  }
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: white;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 5%;
+  }
+  
+  td,
+  th {
+    background-color: white;
+    text-align: left;
+    padding: 8px;
+    color: gray;
+  }
+  td {
+    font-size: 13px;
+  }
+  td:hover {
+    color: darkgray;
+  }
+  th {
+    color: rgb(252, 97, 97);
+  }
+  .Footer_box {
+    width: 300px;
+    height: 90%;
+    margin: auto;
+    margin-top: 30px;
+    background-color: white;
+  }
+  .Footer_box > p {
+    background-color: white;
+  }
+  .rest_name {
+    height: 20%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bolder;
+    border: 2px solid gray;
+    width: 98%;
+    margin: auto;
+    margin-bottom: 10px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .details_box1 {
+    height: 35%;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bolder;
+    border: 2px solid gray;
+    width: 98%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    background-color: white;
+    justify-content: center;
+  }
+  .details_box1 div {
+    text-align: left;
+    margin-left: 20px;
+    background-color: white;
+  }
+  .details_box2 {
+    height: 45%;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bolder;
+    border: 2px solid gray;
+    width: 98%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    background-color: white;
+    justify-content: center;
+  }
+  .details_box2 div {
+    text-align: left;
+    margin-left: 20px;
+    background-color: white;
+  }
+  .foot_img {
+      background-color: #fff;
+    display: flex;
+  }
+  .back_home {
+    width: 74.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color: #fff;
+  }
+  .back_home > button {
+    width: 100%;
+    text-align: center;
+    margin-left: 34%;
+    border-radius: 20px;
+    height: 30px;
+    background-color: #fff;
+    outline: none;
+    border: none;
+    color: crimson;
+    cursor: pointer;
+  }
+  .back_home > button:hover {
+    background-color: #9ba1a8;
+    color: #fff;
+  }
+  
