@@ -8,9 +8,10 @@
       "location": "Central Delhi",
       "City":"Delhi",
       "price": 2000,
+      "offer":30,
       "for":"2(approx)",
       "category": ["Continental", "Asian", "Italian", "North Indian"],
-      "Dineout Pay":true,
+      "Dineout_Pay":true,
       "menu_images": [
         {
           "image": "https://im1.dineout.co.in/images/uploads/restaurant/sharpen/3/z/a/m36296-16040653385f9c183a17cca.jpg?tr=tr:n-small",
@@ -61,7 +62,7 @@
       "price": 2000,
       "for":"2(approx)",
       "category": ["Continental", "Asian", "North Indian"],
-      "Dineout Pay":true,
+      "Dineout_Pay":true,
       "menu_images": [
         {
           "image": "https://im1.dineout.co.in/images/uploads/restaurant/sharpen/3/z/a/m36296-16040653385f9c183a17cca.jpg?tr=tr:n-small",
