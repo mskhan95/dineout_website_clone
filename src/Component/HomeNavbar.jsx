@@ -16,11 +16,11 @@ import {
 
   import "./HomeNavbar.css";
   
-  export default function Navbar() {
+  export default function HomeNavbar() {
     const { isOpen, onOpen, onClose } = useDisclosure();
   
     return (
-      <div id="navFix" style={{fontFamily: "arial, sans-serif"}}>
+      <div id="MainDiv" style={{fontFamily: "arial, sans-serif"}}>
         <Box
         //** Navbar Background
           bg='#FFFFFF'
@@ -44,7 +44,7 @@ import {
                   </path>
                 </svg>
               </span>
-              <input class ="searchInp" placeholder="Search for Restaurants, Cuisines, Location..." type='text' />
+              <input class ="searchInp" placeholder="Location" type='text' />
             </div>
 
             <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
@@ -67,7 +67,6 @@ import {
                       <p>Book A Table</p>
                     </a>
                   </Button>
-  
                   <Button fontSize='sm' className="btnRes" bg='#FFFFFFff' _hover={{color: '#FF645A'}}>
                     <a href="#Dineout Pay">
                       {" "}
@@ -102,12 +101,7 @@ import {
                   size={["sm", "md"]}
                   id="loginBtn"
                 >
-                  <a
-                    href={""}
-                    target="_blank"
-                  >
-                    Login
-                  </a>
+                  <a>Login</a>
                   
                 </Button>
               </Stack>

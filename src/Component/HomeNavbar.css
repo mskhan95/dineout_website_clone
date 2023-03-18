@@ -60,15 +60,14 @@ body{
     
   }
  
-  #navFix {
+  #MainDiv {
     position: sticky;
     top: 0;
     z-index: 20;
     width: 100%;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    box-shadow: 0 1px 7px 0 rgba(0,0,0,.4);
     font-family: "arial, sans-serif";
     height: 10%;
-    background-color: aqua;
   }
   @media(min-width:801px){
     #hamburger{
