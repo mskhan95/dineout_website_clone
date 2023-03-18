@@ -13,7 +13,7 @@ import {
     HamburgerIcon,
     CloseIcon,
   } from "@chakra-ui/icons";
-
+  import { Link } from "react-router-dom";
   import "./HomeNavbar.css";
   
   export default function HomeNavbar() {
@@ -101,8 +101,7 @@ import {
                   size={["sm", "md"]}
                   id="loginBtn"
                 >
-                  <a>Login</a>
-                  
+                 Login
                 </Button>
               </Stack>
             </Flex>

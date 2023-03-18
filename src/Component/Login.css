@@ -1,0 +1,35 @@
+._2NTob{
+    border-top: 1px solid #000;
+    text-align: center;
+    margin-bottom: 2.6rem;
+    margin-top: 2.6rem;
+    position: relative;
+    margin: 30px 25px 20px 25px;
+}
+
+.orLogin{
+    padding: 0;
+    display: inline-block;
+    position: absolute;
+    top: -23px;
+    left: 50%;
+    width: 120px;
+    margin-left: -60px;
+    background: #fff;
+}
+
+.fbGmail{
+    display: flex;
+    gap:50px;
+    /* background-color: aqua; */
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 30px;
+}
+
+.fbGmail >img{
+    width: 180px;
+    height: 40px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
