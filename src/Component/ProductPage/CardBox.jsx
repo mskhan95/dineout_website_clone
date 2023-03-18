@@ -8,7 +8,7 @@ function CardBox({ ele }) {
   return (
     <div key={ele.id}>
       
-      <Card maxW='sm' borderRadius="5px" h="400px" w="100%" marginRight="-90px">
+      <Card maxW='sm' borderRadius="5px" h="350px" w="100%" marginRight="-90px">
         <CardBody p="0px">
           <img src={ele.image} borderRadius="5px" alt="alt" h="175px"/>
 

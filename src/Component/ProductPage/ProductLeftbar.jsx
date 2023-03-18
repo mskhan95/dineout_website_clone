@@ -63,10 +63,10 @@ function ProductLeftbar({category,setCategory}) {
                         </h2>
                         <AccordionPanel pb={4} style={{alignItems:"self-start"}}>
                         <Input  variant='filled' placeholder='Search'/>
-                        <Box m="10px" textAlign='left' style={category=="North Indian" ? {color:"#ff645a"} : {color:"#b4a6a3"}} >Causal Dining</Box>
-                        <Box m="10px" textAlign='left' style={category=="Fast Food" ? {color:"#ff645a"} : {color:"#b4a6a3"}}>Cafe</Box>
-                        <Box m="10px" textAlign='left' style={category=="Chinese" ? {color:"#ff645a"} : {color:"#b4a6a3"}} >Breakfast</Box>
-                        <Box m="10px" textAlign='left' style={category=="Italian" ? {color:"#ff645a"} : {color:"#b4a6a3"}}>Bakery</Box>
+                        <Box m="10px" textAlign='left' >Causal Dining</Box>
+                        <Box m="10px" textAlign='left' >Cafe</Box>
+                        <Box m="10px" textAlign='left' >Breakfast</Box>
+                        <Box m="10px" textAlign='left' >Bakery</Box>
                         </AccordionPanel>
                     </>
                     )}
@@ -90,10 +90,10 @@ function ProductLeftbar({category,setCategory}) {
                         </h2>
                         <AccordionPanel pb={4} style={{alignItems:"self-start"}}>
                         <Input  variant='filled' placeholder='Search'/>
-                        <Box m="10px" textAlign='left' style={category=="North Indian" ? {color:"#ff645a"} : {color:"#b4a6a3"}}  >Dineout Pay</Box>
-                        <Box m="10px" textAlign='left' style={category=="Fast Food" ? {color:"#ff645a"} : {color:"#b4a6a3"}} >Pure Veg</Box>
-                        <Box m="10px" textAlign='left' style={category=="Chinese" ? {color:"#ff645a"} : {color:"#b4a6a3"}}>5 Star</Box>
-                        <Box m="10px" textAlign='left' style={category=="Italian" ? {color:"#ff645a"} : {color:"#b4a6a3"}}>Buffet</Box>
+                        <Box m="10px" textAlign='left'   >Dineout Pay</Box>
+                        <Box m="10px" textAlign='left' >Pure Veg</Box>
+                        <Box m="10px" textAlign='left' >5 Star</Box>
+                        <Box m="10px" textAlign='left' >Buffet</Box>
                         </AccordionPanel>
                     </>
                     )}
@@ -118,10 +118,10 @@ function ProductLeftbar({category,setCategory}) {
                         </h2>
                         <AccordionPanel pb={4} style={{alignItems:"self-start"}}>
                         <Input  variant='filled' placeholder='Search'/>
-                        <Box m="10px" textAlign='left' style={category=="North Indian" ? {color:"#ff645a"} : {color:"#b4a6a3"}}>Cards Accepted</Box>
-                        <Box m="10px" textAlign='left' style={category=="Fast Food" ? {color:"#ff645a"} : {color:"#b4a6a3"}}>Wallet Accepted</Box>
-                        <Box m="10px" textAlign='left' style={category=="Chinese" ? {color:"#ff645a"} : {color:"#b4a6a3"}} >Home Delivery</Box>
-                        <Box m="10px" textAlign='left' style={category=="Italian" ? {color:"#ff645a"} : {color:"#b4a6a3"}} >Air Conditional</Box>
+                        <Box m="10px" textAlign='left' >Cards Accepted</Box>
+                        <Box m="10px" textAlign='left' >Wallet Accepted</Box>
+                        <Box m="10px" textAlign='left' >Home Delivery</Box>
+                        <Box m="10px" textAlign='left' >Air Conditional</Box>
                         </AccordionPanel>
                     </>
                     )}
