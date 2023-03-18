@@ -1,11 +1,16 @@
-import {Box,Grid,Card,CardBody,Heading,Image} from "@chakra-ui/react"
-
+import {Box,Grid,Card,CardBody,Heading,Image} from "@chakra-ui/react";
 function BestOffers(){
     return(
     <Box pb='60px' bg='#f3f3f3' >
         <Heading textAlign='left' marginLeft='100px' size='md'  marginBottom='10px' >Best Offers</Heading>
         
-        <Grid templateColumns='repeat(4, 1fr)' gap={6} paddingLeft='100px' marginRight='47%'>
+        <Grid  templateColumns={{
+    base: "repeat(1, 1fr)",
+    sm: "repeat(2, 1fr)",
+    md: "repeat(3, 1fr)",
+    lg: "repeat(4, 1fr)",
+  }}
+   gap={6} paddingLeft='100px' marginRight='47%'>
         
         <Card maxW='sm' >
          <CardBody >
@@ -46,8 +51,6 @@ function BestOffers(){
             />
            </CardBody>
           </Card>
-  
-  
 </Grid>
     </Box>
     )

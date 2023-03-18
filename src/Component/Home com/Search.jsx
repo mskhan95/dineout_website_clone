@@ -6,7 +6,7 @@
 // p
 
 
-import React, { useState } from "react";
+import React, { useState,useEffect,useRef } from "react";
 
 import {
   Box,
@@ -20,7 +20,8 @@ import {
   Heading,
   Flex,
   Image,
-  Avatar
+  Avatar,
+  Divider
 } from "@chakra-ui/react";
 
 import { SearchIcon } from '@chakra-ui/icons'
@@ -28,7 +29,7 @@ const Search = () => {
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
    const [showModal, setShowModal] = useState(false);
-
+   const suggestionBoxRef = useRef(null);
 
 
   let timeoutId;
@@ -59,6 +60,21 @@ const handleChange = (e) => {
   
 };
 
+
+useEffect(() => {
+  const handleClick = (event) => {
+    if (suggestionBoxRef.current && !suggestionBoxRef.current.contains(event.target)) {
+      setSuggestions([]);
+    }
+  };
+  
+  document.addEventListener('click', handleClick);
+  
+  return () => {
+    document.removeEventListener('click', handleClick);
+  };
+}, []);
+
   return (
     <Box
     bgImage="https://im1.dineout.co.in/images/uploads/misc/2021/Mar/31/oldherobannerwebfinal_bau.jpg"
@@ -83,18 +99,6 @@ const handleChange = (e) => {
       </InputGroup>
        
        </Box>
-      
-
-       
-            
-              {/* <Box border="1px solid #ccc" borderRadius="md" bg="white"  
-              // w="50%" marginLeft="20%"
-               boxShadow='0 0 10px black'
-              //  overflow='hidden'
-               
-                 
-               
-              > */}
               <Box
         border="1px solid #ccc"
         borderRadius="md"
@@ -105,6 +109,8 @@ const handleChange = (e) => {
         marginTop="-1px"
         maxHeight="250px"
         overflowY="auto"
+        ml='78px' mr='450px'
+        ref={suggestionBoxRef}
       >
                 
                 <List  >
@@ -120,12 +126,15 @@ const handleChange = (e) => {
                         // setShowModal(false);
                       }}
                     >
-                      <Flex>
+                      <Flex justifyContent='space-between'>
                       
                       <Avatar  size='md' src={item.image} />
-                      <Text>{item.resName}</Text>
+                      <Text pt='5px'>{item.resName}</Text>
+                      <Box fontSize='sm'textAlign='center'bg='#8cbb0f' p='6px 8px' color='white' w='50px'borderRadius="md" h='30px'  >{item.rating}</Box>
+                      
                       </Flex>
                       
+                      <Divider  />
                     </ListItem>
                   ))}
                 </List>
@@ -141,64 +150,8 @@ const handleChange = (e) => {
 export default Search;
 
 
-// ppppp
 
 
-
-// import { useState } from "react";
-// import {
-//   Input,
-//   InputGroup,
-//   InputLeftElement,
-//   Popover,
-//   PopoverTrigger,
-//   PopoverContent,
-//   PopoverBody,
-//   List,
-//   ListItem,
-// } from "@chakra-ui/react";
-// import { SearchIcon } from "@chakra-ui/icons";
-
-// function Search() {
-//   const [searchValue, setSearchValue] = useState("");
-//   const [searchSuggestions, setSearchSuggestions] = useState([]);
-
-//   const handleSearchChange = (event) => {
-//     const value = event.target.value;
-//     setSearchValue(value);
-
-//     // Here you can make an API call or search through your data to get search suggestions
-//     // For this example, we'll just use a static list of search suggestions
-//     setSearchSuggestions(["apple", "banana", "cherry", "date", "elderberry", "fig", "grape"].filter((suggestion) =>
-//       suggestion.toLowerCase().includes(value.toLowerCase())
-//     ));
-//   };
-
-//   return (
-//     <InputGroup>
-//       <InputLeftElement pointerEvents="none" children={<SearchIcon color="gray.300" />} />
-//       <Input type="text" placeholder="Search" value={searchValue} onChange={handleSearchChange} />
-
-//       <Popover isOpen={searchSuggestions.length > 0}>
-//         <PopoverTrigger>
-//           <></>
-//         </PopoverTrigger>
-//         <PopoverContent width="100%">
-//           <PopoverBody p="0">
-//             <List bg="white" border="1px solid" borderColor="gray.200" borderRadius="md" boxShadow="md" maxH="300px" overflowY="scroll">
-//               {searchSuggestions.map((suggestion) => (
-//                 <ListItem key={suggestion} py="2" px="4" _hover={{ bg: "gray.100" }}>
-//                   {suggestion}
-//                 </ListItem>
-//               ))}
-//             </List>
-//           </PopoverBody>
-//         </PopoverContent>
-//       </Popover>
-//     </InputGroup>
-//   );
-// }
-// export default Search;
 
 
 
