@@ -16,12 +16,6 @@ import {
   List,
   ListItem,
   Text,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalCloseButton,
   Button,
   Heading,
   Flex,
@@ -77,31 +71,47 @@ const handleChange = (e) => {
       <Heading fontSize="3xl" fontWeight="bold" color="white">
          It's Now Safe To  <Heading as="span" color="#FF645A">Crave!</Heading>
        </Heading>
-      <InputGroup>
+       <Box ml='75px' mr='75px' h='60px' bg='white' borderRadius='lg'>
+       <InputGroup>
         <InputLeftElement
           pointerEvents="none"
           
-          children={<SearchIcon color="#FF645A" />}
+          children={<SearchIcon color="#FF645A" boxSize={6} mt='18px' />}
         />
-        <Input type="text" placeholder="Search" bg="white" onChange={handleChange} />
-        <Button bg='#FF645A' color='white'>Search</Button>
+        <Input type="text" placeholder="Search"  h='60px' onChange={handleChange} />
+        <Button bg='#FF645A' color='white' h='50px' m='5px' w='130px'>Search</Button>
       </InputGroup>
-       <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Search Results</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody> 
-             {query.length > 0 && ( 
-              <Box border="1px solid #ccc" borderRadius="md" bg="white"  
+       
+       </Box>
+      
+
+       
+            
+              {/* <Box border="1px solid #ccc" borderRadius="md" bg="white"  
               // w="50%" marginLeft="20%"
                boxShadow='0 0 10px black'
-              
-              >
-                <List>
+              //  overflow='hidden'
+               
+                 
+               
+              > */}
+              <Box
+        border="1px solid #ccc"
+        borderRadius="md"
+        bg="white"
+        boxShadow="0 0 10px black"
+        position="relative"
+        zIndex="1"
+        marginTop="-1px"
+        maxHeight="250px"
+        overflowY="auto"
+      >
+                
+                <List  >
                   {suggestions.map((item) => (
                     <ListItem
-                      key={item}
+                     
+                      key={item.id}
                       px={4}
                       py={2}
                       _hover={{ background: "#f5f5f5" }}
@@ -111,20 +121,19 @@ const handleChange = (e) => {
                       }}
                     >
                       <Flex>
-                      {/* <Image w='10%' src={item.image} alt='Dan Abramov' /> */}
+                      
                       <Avatar  size='md' src={item.image} />
                       <Text>{item.resName}</Text>
                       </Flex>
-                      {/* <img src={item.image}alt="alt"/>
-                      <Text>{item.resName}</Text> */}
+                      
                     </ListItem>
                   ))}
                 </List>
+
+                
+                
               </Box>
-             )} 
-           </ModalBody>
-        </ModalContent>
-      </Modal> 
+             
              </Box>
   );
 };
