@@ -8,7 +8,7 @@
     margin-top: 1px;
   }
   .Footer_inner {
-    width: 80%;
+    width: 75%;
     height: 100%;
     margin: auto;
     margin-bottom: 30px;
@@ -32,13 +32,13 @@
     color: gray;
   }
   td {
-    font-size: 13px;
+    font-size: 0.9rem;
   }
   td:hover {
     color: darkgray;
   }
   th {
-    color: rgb(252, 97, 97);
+    color: #FF645A;
   }
   .Footer_box {
     width: 300px;
