@@ -5,9 +5,9 @@ function Pagination({page, setPage}) {
     return (
         <div>
             <Box padding="20px" >
-            <Button disabled={page===1} onClick={()=>{setPage(page-1)}}>Prev</Button>&nbsp;&nbsp;
+            <Button bg="#ff645a" color="white"onClick={()=>{setPage(page-1)}}>Prev</Button>&nbsp;&nbsp;
             <Button >{page}</Button>&nbsp;&nbsp;
-            <Button  onClick={()=>{setPage(page+1)}}>Next</Button>
+            <Button bg="#ff645a" color="white" onClick={()=>{setPage(page+1)}}>Next</Button>
             </Box>
         </div>
     );

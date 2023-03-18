@@ -1,26 +1,33 @@
 import React, { useEffect } from 'react';
-import {Box, Button, Flex, Grid, Spacer} from '@chakra-ui/react'
+import {Box, Button, Flex, Grid, Heading, Spacer } from '@chakra-ui/react'
 import { useSelector } from 'react-redux';
 import { useState } from 'react'
 import CardBox from './CardBox';
 import { Select } from '@chakra-ui/react'
+import {
+    Breadcrumb,
+    BreadcrumbItem,
+    BreadcrumbLink,
+    BreadcrumbSeparator,
+  } from '@chakra-ui/react'
+  import { Link } from "react-router-dom";
+  import { ChevronRightIcon } from '@chakra-ui/icons'
 
-function ProductPageRightSide({setOrder, setSort}) {
+function ProductPageRightSide({setOrder, setSort, city}) {
 
     
 
     let storedata = useSelector((store)=>{
-
         return store.Preducer.products
-
         })
-        const [product, setProduct] = useState(storedata && storedata.length>0 ? storedata : [])
 
-    console.log(storedata)
+    //     const [product, setProduct] = useState(storedata && storedata.length>0 ? storedata : [])
 
-    useEffect(()=>{
-        setProduct(storedata)
-    },[])
+    // console.log(storedata)
+
+    // useEffect(()=>{
+    //    setProduct(storedata)
+    // },[])
 
     function HandleSorting(data){
         console.log(data);
@@ -30,7 +37,7 @@ function ProductPageRightSide({setOrder, setSort}) {
         }
         else if(data==="rating"){
             setSort(data)
-            setOrder("asc")
+            setOrder("desc")
         }
         else if(data==="asc"){
             setSort("price")
@@ -40,14 +47,35 @@ function ProductPageRightSide({setOrder, setSort}) {
             setSort("price")
             setOrder(data)
         }
+
     }
     
     return (
-        <Box>
-            <Flex> 
-                <Box>Best Resturent Near Me in Delhi</Box><Spacer/>
-                <Flex>
-                    <Box>Sort by</Box>
+        <Box marginTop="10px" marginLeft="30px">
+
+            <div style={{color:"#a0a0a0",FontSize:"8px", padding:"5px"}} >
+            <Breadcrumb spacing='8px' separator={<ChevronRightIcon color='gray.500' />}>
+            <BreadcrumbItem>
+                <BreadcrumbLink href='/'>Dineout</BreadcrumbLink>
+            </BreadcrumbItem>
+
+            <BreadcrumbItem>
+                <BreadcrumbLink href='/productpage'>{city}</BreadcrumbLink>
+            </BreadcrumbItem>
+
+            <BreadcrumbItem isCurrentPage>
+                <BreadcrumbLink href='#'>{city} Restaurants</BreadcrumbLink>
+            </BreadcrumbItem>
+            </Breadcrumb>
+            </div>
+           
+
+
+            <Flex marginTop="15px"> 
+                <Box><Heading fontSize="24px" textAlign="center">Best Resturent Near Me in {city}</Heading></Box><Spacer/>
+                <Box>
+                <Flex margin='10px'>
+                    <Box w="100px" font-size="16px" alignItems="center">Sort by</Box>
                     <Select onChange={(e)=>{HandleSorting(e.target.value)}}>
                         <option value=''>Popularity</option>
                         <option value='rating'>Rating</option>
@@ -55,11 +83,12 @@ function ProductPageRightSide({setOrder, setSort}) {
                         <option value='desc'>Price:High to Low</option>
                     </Select>
                 </Flex>
+                </Box>
             </Flex>
-            <Grid templateColumns='repeat(3, 1fr)' gap="3">
+            <Grid templateColumns='repeat(3, 1fr)' gap="5">
                 {
                     storedata?.map((ele,i)=>{
-                        return <CardBox key={i+1} ele ={ele} />
+                        return <Link to={`/productpage/${ele.id}`}><CardBox key={i+1} ele ={ele} /></Link> 
                     })
                 }
             </Grid>
