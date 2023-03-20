@@ -1,13 +1,6 @@
 
-// 12345
- 
-
-
-// p
-
-
 import React, { useState,useEffect,useRef } from "react";
-
+import { Link } from "react-router-dom";
 import {
   Box,
   Input,
@@ -43,7 +36,7 @@ const handleChange = (e) => {
       getSearch(value);
       
       setShowModal(true);
-    }, 2000);
+    }, 1000);
   }
 
   function getSearch(value) {
@@ -76,10 +69,10 @@ useEffect(() => {
 }, []);
 
   return (
-    <Box
+    <Box 
     bgImage="https://im1.dineout.co.in/images/uploads/misc/2021/Mar/31/oldherobannerwebfinal_bau.jpg"
       bgSize="cover"
-      height="300px"
+      height="400px"
       textAlign="center"
       paddingTop="100px"
       marginBottom='50px'
@@ -94,7 +87,7 @@ useEffect(() => {
           
           children={<SearchIcon color="#FF645A" boxSize={6} mt='18px' />}
         />
-        <Input type="text" placeholder="Search"  h='60px' onChange={handleChange} />
+        <Input type="text" placeholder="Search for Restaurant, Cuisines, Location..."  h='60px' onChange={handleChange} />
         <Button bg='#FF645A' color='white' h='50px' m='5px' w='130px'>Search</Button>
       </InputGroup>
        
@@ -115,7 +108,7 @@ useEffect(() => {
                 
                 <List  >
                   {suggestions.map((item) => (
-                    <ListItem
+                    <Link to={`/restaurent/${item.id}`} ><ListItem
                      
                       key={item.id}
                       px={4}
@@ -135,7 +128,7 @@ useEffect(() => {
                       </Flex>
                       
                       <Divider  />
-                    </ListItem>
+                    </ListItem></Link>
                   ))}
                 </List>
 
