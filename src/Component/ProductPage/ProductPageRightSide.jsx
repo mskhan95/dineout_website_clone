@@ -79,17 +79,17 @@ function ProductPageRightSide({setOrder, setSort, city}) {
                     <Select onChange={(e)=>{HandleSorting(e.target.value)}}>
                         <option value=''>Popularity</option>
                         <option value='rating'>Rating</option>
-                        <option value='asc'>Price:Low to High</option>
-                        <option value='desc'>Price:High to Low</option>
+                        <option value='asc'>Price: Low to High</option>
+                        <option value='desc'>Price: High to Low</option>
                     </Select>
                     
                 </Flex>
                 </Box>
             </Flex>
-            <Grid templateColumns='repeat(3, 1fr)' gap="5">
+            <Grid templateColumns={[ 'repeat(1, 1fr)', 'repeat(2, 1fr)','repeat(3, 1fr)']} gap="5">
                 {
                     storedata?.map((ele,i)=>{
-                        return <Link to={`/productpage/${ele.id}`}><CardBox key={i+1} ele ={ele} /></Link> 
+                        return <Link to={`/restaurent/${ele.id}`}><CardBox key={i+1} ele ={ele} /></Link> 
                     })
                 }
             </Grid>

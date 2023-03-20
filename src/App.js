@@ -1,11 +1,12 @@
 import './App.css';
-import ProductMainPage from './Component/ProductPage/ProductMainPage';
-
+import AllRoute from '../src/Component/AllRoute/AllRoute'
+import Footer from './Component/Footer';
 function App() {
   
   return (
     <div className="App">
-      <ProductMainPage/>
+      <AllRoute/>
+      <Footer/> 
     </div>
   );
 }
