@@ -1,3 +1,5 @@
+import React, { useState, useEffect } from "react";
+
 import {
     Box,
     Flex,
@@ -17,6 +19,7 @@ import {
   import "./HomeNavbar.css";
   
   export default function HomeNavbar() {
+    // const navigate = useNavigate();
     const { isOpen, onOpen, onClose } = useDisclosure();
   
     return (
@@ -100,6 +103,9 @@ import {
                   variant="solid"
                   size={["sm", "md"]}
                   id="loginBtn"
+                  onClick={() => {
+                    // navigate("/login");
+                  }}
                 >
                  Login
                 </Button>
