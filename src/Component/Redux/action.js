@@ -8,7 +8,7 @@ const appThunkActionCreator = (page,sort,order,category,city) => {
             type:GET_RES_DATA_REQUEST,
             payload: true,
         });
-        axios.get(`https://wild-rose-cape-buffalo-kit.cyclic.app/restaurants?_page=${page}&_limit=15&_sort=${sort}&_order=${order}&category_like=${category}&City_like=${city}`)
+        axios.get(`https://wild-rose-cape-buffalo-kit.cyclic.app/restaurants?_page=${page}&_limit=12&_sort=${sort}&_order=${order}&category_like=${category}&City_like=${city}`)
         .then((res)=>{
          //console.log("aaaa",res.data);   
          if (res.data) {  
