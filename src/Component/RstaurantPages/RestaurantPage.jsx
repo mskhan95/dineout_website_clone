@@ -1,9 +1,17 @@
 import React from "react";
-import "./RestaurentPage.css";
+import  "./RestaurantPage.css"
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Navbar from '../Navbar'
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+} from '@chakra-ui/react'
+import { ChevronRightIcon } from '@chakra-ui/icons'
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -11,13 +19,48 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-
-const RestaurentPage = (props) => {
+    const data = {
+    image:
+      "https://im1.dineout.co.in/images/uploads/restaurant/sharpen/2/a/j/p20996-145631488756cd9a0796608.jpg?tr=tr:n-medium",
+    rating: 4.2,
+    resName: "Tamasha",
+    "restnt-name-href":
+      "https://www.dineout.co.in/delhi/tamasha-connaught-place-central-delhi-20996",
+    address: "Connaught Place",
+    "restnt-loc-href":
+      "https://www.dineout.co.in/delhi-restaurants/central-delhi/connaught-place",
+    location: "Central Delhi",
+    "restnt-loc-href-2":
+      "https://www.dineout.co.in/delhi-restaurants/central-delhi",
+    price: "₹ 2000",
+    category: "Continental",
+    "double-line-ellipsis-href":
+      "https://www.dineout.co.in/delhi-restaurants/continental-cuisine",
+    "double-line-ellipsis-4": ",",
+    category2: "Asian",
+    "double-line-ellipsis-href-2":
+      "https://www.dineout.co.in/delhi-restaurants/asian-cuisine",
+    "double-line-ellipsis-6": ",",
+    category3: "Italian",
+    "double-line-ellipsis-href-3":
+      "https://www.dineout.co.in/delhi-restaurants/italian-cuisine",
+    "double-line-ellipsis-8": ",",
+    category4: "North Indian",
+    "double-line-ellipsis-href-4":
+      "https://www.dineout.co.in/delhi-restaurants/north-indian-cuisine",
+    btn: "Dineout Pay",
+    "btn-href":
+      "https://www.dineout.co.in/dineout-pay/instant-discount/how-it-works",
+    "restnt-loc-4": "",
+    "restnt-loc-href-3": "",
+    id: 1,
+  };
+const RestaurentPage = () => {
   // const [data, setdata] = useState({});
   const [time_ct, settime_ct] = useState(1);
   const [add_ct, setadd_ct] = useState(0);
   const [review, setreview] = useState(false);
-  const [arr, setarr] = useState(props.data); //data
+  const [arr, setarr] = useState([]); //data
   const [lunch, setlunch] = useState(true);
   const [breakfast, setbreakfast] = useState(false);
   const [dinner, setdinner] = useState(false);
@@ -59,20 +102,22 @@ const RestaurentPage = (props) => {
   const [payment, setpayment] = useState(false);
   const { id } = useParams();
   // console.log(id);
-
+var res;
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/restaurants/${id}`)
+      .get(`https://wild-rose-cape-buffalo-kit.cyclic.app/restaurants?id=${ id }`)
       .then((res) => {
-        // console.log(res);
-        setarr(res.data);
-        // console.log(arr);
+        // console.log(res.data);
+        setarr(res.data[0]);
+      // console.log(arr);
       })
       .catch((err) => {
         console.log(err);
       });
+
   }, []);
 
+  console.log(arr);
   const arr1 = {
     image:
       "https://im1.dineout.co.in/images/uploads/restaurant/sharpen/2/b/t/p27452-15020105505986dcb6d147f.jpg?tr=tr:n-medium",
@@ -183,17 +228,45 @@ const RestaurentPage = (props) => {
   };
   // console.log(time_ct);
   return !payment ? (
-    <>
-      <div className="restaurent_container">
+    <div >
+    <Navbar/>
+      <div className="restaurent_container" style={{marginTop:"30px"}}>
         <div className="restaurent_main">
-          <p className="restaurent_header">
+          {/* <p className="restaurent_header">
             Dineout &nbsp;&nbsp;{">"}
             &nbsp;&nbsp;Delhi&nbsp;&nbsp;{">"}
             &nbsp;&nbsp;{arr["location"]}&nbsp;&nbsp;
             {">"}&nbsp;&nbsp;{arr["category4"]}
             &nbsp;&nbsp;{">"}
             &nbsp;&nbsp;{arr["resName"]}
-          </p>
+          </p> */}
+
+          <div style={{color:"#a0a0a0",FontSize:"8px", padding:"5px"}} >
+            <Breadcrumb spacing='8px' separator={<ChevronRightIcon color='gray.500' />}>
+            <BreadcrumbItem>
+                <BreadcrumbLink href='/'>Dineout</BreadcrumbLink>
+            </BreadcrumbItem>
+
+            <BreadcrumbItem>
+                <BreadcrumbLink href='/productpage'>{arr["City"]}</BreadcrumbLink>
+            </BreadcrumbItem>
+
+            <BreadcrumbItem isCurrentPage>
+                <BreadcrumbLink href='#'>{arr["location"]}</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbItem isCurrentPage>
+                <BreadcrumbLink href='#'>{arr["resName"]}</BreadcrumbLink>
+            </BreadcrumbItem>
+            </Breadcrumb>
+            </div>
+
+
+
+
+
+
+
+
           <div className="restnt-top1">
             <Swiper
               modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -592,7 +665,7 @@ const RestaurentPage = (props) => {
               <div className="left">
                 <img
                   src="https://lh5.googleusercontent.com/-8WRkM3Fw4VY/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reXuKw7H2gJ1GLFG_3qtDOlyRdLmA/s96-c/photo.jpg"
-                  alt="img5"
+                  alt="img6"
                 />
               </div>
               <div className="right">
@@ -1945,16 +2018,17 @@ const RestaurentPage = (props) => {
         </div>
       </div>
       <></>
-    </>
+    </div>
   ) : (
-    <div style={{ marginTop: "130px", marginBottom: "30px" }}>
+    <div style={{ marginTop: "0px", marginBottom: "30px" }}>
       <>
+      <Navbar/>
         <div
           style={{
             width: "50%",
             margin: "auto",
             height: "600px",
-            marginTop: "10px",
+            marginTop: "50px",
             marginBottom: "30px",
           }}
         >
@@ -2053,7 +2127,7 @@ const RestaurentPage = (props) => {
         <br />
         <div className="back_home">
           <Link to="/" state={{ backgroundColor: "white" }}>
-            <button className="back_bt">Back to Home</button>
+          <button style={{ background: "rgb(241,89,49)",borderRadius:"3px", marginTop: "20px", width: "220px",height:"41px",textAlign:"center",fontWeight:"bold",color:"white"}}>Go to Home</button>
           </Link>
         </div>
       </>

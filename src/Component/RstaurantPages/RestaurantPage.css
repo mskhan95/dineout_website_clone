@@ -1,4 +1,4 @@
-* {
+ /* * {
     background-color: #f4f4f4;
     font-family: Metropolis, -apple-system, BlinkMacSystemFont, "Helvetica Neue",
         Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
@@ -15,7 +15,7 @@
 
 *::-webkit-scrollbar-thumb {
     background: rgb(124, 124, 124);
-}
+}  */
 
 .restaurent_container {
     display: flex;
