@@ -1,0 +1,87 @@
+body{
+  font-family: arial, sans-serif;
+  
+}
+
+.btnRes:hover{
+  color: #FF645A;
+}
+
+#loginBtn{
+  margin-right: 180px;
+  margin-left: 50px;
+  padding: 0px 50px;
+}
+
+.logoImg{
+  width: 100px;
+  margin-left: 150px;
+}
+.searchBar{
+  /* background-color: #FF645A; */
+  display: flex;
+  border-radius: 4px;
+  align-items: center;
+  border: 0.5px solid #bcbcbc;
+  margin-right: 50px;
+}
+
+.searchInp{
+  padding: 5px 10px;
+  /* margin: 0 0 0 3rem; */
+  width: 210px;
+  position: relative;
+  color: #666;
+  outline: none;
+}
+
+.search1{
+  flex-shrink: 0;
+  width: 20px;
+  margin-top: 0.2rem;
+}
+
+.locIcon{
+  /* overflow: hidden; */
+  margin: 5px 5px;
+  /* background-color: #FF645A; */
+}
+
+@media only screen and (max-width: 500px) {
+    #navRes {
+      display: none;
+    }
+    #itemNav {
+      display: none;
+    }
+    .searchBar{
+      display: none;
+    }
+    
+  }
+ 
+  #MainDiv {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    width: 100%;
+    box-shadow: 0 1px 7px 0 rgba(0,0,0,.4);
+    font-family: "arial, sans-serif";
+    height: 10%;
+  }
+  @media(min-width:801px){
+    #hamburger{
+      display: none;
+    }
+  }
+  @media (max-width:800px) {
+    #loginBtn{
+      margin-right: 10px;
+      padding: 0px 30px;
+    }
+  }
+
+  /* #FF645A  OR  rgb(255,100,90)
+  #FFFFFF
+   */
+  
