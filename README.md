@@ -8,7 +8,7 @@ In this Project, We have tried to implement some of the functionalities of the a
 
 ### Clone the Git repo using the below link
 
-- <https://github.com/MOHDSHABANKHAN/dineout_website_clone>
+- <https://github.com/MOHDSHABANKHAN/dineout_website_clone.git>
 
 - Use the package manager [npm](https://www.npmjs.com/) to install required Packages.
 
