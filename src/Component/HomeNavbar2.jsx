@@ -28,7 +28,7 @@ import {
     HamburgerIcon, CloseIcon} from "@chakra-ui/icons";
   import {NavLink, Link } from "react-router-dom";
   import { useContext } from "react";
-import { MyContext } from "./Context";
+  import { MyContext } from "./Context";
   import "./HomeNavbar.css";
   
   export default function HomeNavbar() {
@@ -44,13 +44,11 @@ import { MyContext } from "./Context";
 
     const [username, setUserName] = useState("");
     const [userphone, setUserPhone] = useState("");
-    // const navigator = useNavigate();
     const handleSubmit = () => {
       if (userphone.length !== 10){
         alert("Please Enter Valid Mobile No");
-        
+        onClose();
       }
-      // else navigator("/otp");
       else console.log("Valid Mobile No");
       setUser(username);
       onClose();
@@ -72,15 +70,19 @@ import { MyContext } from "./Context";
     }, []) 
 
     const handleOpen =()=>{
+      if (userphone.length === 10){
         onOpen2();
         alert("Your OTP is " + otp);
         console.log(otp)
+      }
+      else{
+        onOpen();
+      }
     }
 
     const handleSubmit2 = () => {
         if (enter == otp){
             onClose2();
-
         }
         else alert("Wrong OTP entered. Please Try Again!");
     };
@@ -122,7 +124,7 @@ import { MyContext } from "./Context";
             </select>
             </div>
 
-            <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
+            <Flex h={16} alignItems={"center"} justifyContent={"space-between"} ml='-160px'>
               <HStack spacing={8} alignItems={"center"}>
                 <HStack
                   as={"nav"}
@@ -130,34 +132,34 @@ import { MyContext } from "./Context";
                   display={{ base: "none", md: "flex" }}
                   id="myDIV"
                 >
-                  <Button fontSize='sm' className="btnRes" bg='#FFFFFFff' _hover={{color: '#FF645A'}} >
+                  <Button fontSize='sm' className="btnRes" bg='#FFFFFFff' _hover={{color: '#FF645A', fontWeight: "bold"}} >
                     <NavLink to="/">
                       {" "}
-                      <p>Home</p>
+                      <p className="changeOpts">Home</p>
                     </NavLink>
                   </Button>
   
-                  <Button fontSize='sm' className="btnRes" bg='#FFFFFFff' _hover={{color: '#FF645A'}}>
+                  <Button fontSize='sm' className="btnRes" bg='#FFFFFFff' _hover={{color: '#FF645A', fontWeight: "bold"}}>
                     <NavLink to="/restaurent">
-                      <p>Book A Table</p>
+                      <p className="changeOpts">Book A Table</p>
                     </NavLink>
                   </Button>
-                  <Button fontSize='sm' className="btnRes" bg='#FFFFFFff' _hover={{color: '#FF645A'}}>
+                  <Button fontSize='sm' className="btnRes" bg='#FFFFFFff' _hover={{color: '#FF645A', fontWeight: "bold"}}>
                   <NavLink to="/restaurent">
                       {" "}
-                      <p>Dineout Pay</p>
+                      <p className="changeOpts">Dineout Pay</p>
                       </NavLink>
                   </Button>
   
-                  <Button fontSize='sm' className="btnRes" bg='#FFFFFFff' _hover={{color: '#FF645A'}}>
+                  <Button fontSize='sm' className="btnRes" bg='#FFFFFFff' _hover={{color: '#FF645A', fontWeight: "bold"}}>
                   <NavLink to="/restaurent/event">
-                      <p>Events</p>
+                      <p className="changeOpts">Events</p>
                     </NavLink>
                   </Button>
   
-                  <Button fontSize='sm' className="btnRes" bg='#FFFFFFff' _hover={{color: '#FF645A'}}>
+                  <Button fontSize='sm' className="btnRes" bg='#FFFFFFff' _hover={{color: '#FF645A', fontWeight: "bold"}}>
                     <a href="https://www.dineout.co.in/blog/">
-                      <p>Blog</p>
+                      <p className="changeOpts">Blog</p>
                     </a>
                   </Button>
                 </HStack>
@@ -177,8 +179,8 @@ import { MyContext } from "./Context";
                   _hover={{ bg: "#f30f00", color: "#FFFFFF" }}
                   color="white"
                   variant="solid"
-                  size={["sm", "md"]}
-                  id="loginBtn"
+                  size={["sm", "sm"]}
+                  id="loginBtnH"
                   onClick={onOpen}
                 >
                  {
@@ -187,11 +189,11 @@ import { MyContext } from "./Context";
                 </Button>
               </Stack>
             </Flex> :
-                    <div className="account_section">
-                    <div className="userInititals">
-                      <p>{user}</p>
+                    <div className="account_sectionH">
+                    <div className="userInititalsH" style={{backgroundColor: 'rgba(255,88,84,0.12)'}} >
+                      <p className= "UserInitH" style={{}}>{user}</p>
                     </div>
-                    <select name="" id="select_account" onChange={()=>{setUser("")}}>
+                    <select name="" id="select_accountH" onChange={()=>{setUser("")}}>
                       <option value="Account">My Account </option>
                       <option value="Profile">Profile</option>
                       <option value="Coupon">History</option>
